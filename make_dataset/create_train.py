@@ -2,15 +2,8 @@ from __future__ import division
 
 # torch condiguration
 import argparse
-import math
 import os
-import pdb
-import pickle
-import random
-import shutil
 import sys
-import time
-from math import log10
 from random import uniform
 
 import matplotlib.cm as cm

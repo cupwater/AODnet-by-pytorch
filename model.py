@@ -7,10 +7,10 @@ import torch.nn.functional as F
 class AODnet(nn.Module):   
     def __init__(self):
         super(AODnet, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=3, out_channels=3, kernel_size=1)
-        self.conv2 = nn.Conv2d(in_channels=3, out_channels=3, kernel_size=3, padding=1)
-        self.conv3 = nn.Conv2d(in_channels=6, out_channels=3, kernel_size=5, padding=2)
-        self.conv4 = nn.Conv2d(in_channels=6, out_channels=3, kernel_size=7, padding=3)
+        self.conv1 = nn.Conv2d(in_channels=3,  out_channels=3, kernel_size=1)
+        self.conv2 = nn.Conv2d(in_channels=3,  out_channels=3, kernel_size=3, padding=1)
+        self.conv3 = nn.Conv2d(in_channels=6,  out_channels=3, kernel_size=5, padding=2)
+        self.conv4 = nn.Conv2d(in_channels=6,  out_channels=3, kernel_size=7, padding=3)
         self.conv5 = nn.Conv2d(in_channels=12, out_channels=3, kernel_size=3, padding=1)
         self.b = 1
 

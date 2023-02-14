@@ -4,8 +4,10 @@ import random
 import shutil
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--trainroot', type=str, required=True, help='path to train directory')
-parser.add_argument('--valroot', type=str, required=True, help='path to validation directory')
+parser.add_argument('--trainroot', type=str, required=True,
+                    help='path to train directory')
+parser.add_argument('--valroot', type=str, required=True,
+                    help='path to validation directory')
 args = parser.parse_args()
 print(args)
 
