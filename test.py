@@ -1,5 +1,6 @@
 import argparse
 
+import numpy as np
 import PIL.Image as Image
 import scipy.misc
 import skimage.io as sio
@@ -22,6 +23,7 @@ print('===> Loading model')
 net = torch.load(args.model)
 if args.cuda:
     net = net.cuda()
+torch.save(net.state_dict(), 'aod_weights.pth')
 
 #===== Load input image =====
 transform = transforms.Compose([
@@ -39,5 +41,5 @@ if args.cuda:
     varIn = varIn.cuda()
 
 prediction = net(varIn)
-prediction = prediction.data.cpu().numpy().squeeze().transpose((1,2,0))
-scipy.misc.toimage(prediction).save(args.output_filename)
+prediction = prediction.data.cpu().numpy().squeeze().transpose((1,2,0))*255
+Image.fromarray(prediction.astype(np.uint8)).save(args.output_filename)
